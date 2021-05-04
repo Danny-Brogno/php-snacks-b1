@@ -11,10 +11,12 @@
         background-color: navy;
       }
 
-      header {
+      header, main {
         color: white;
         display: flex;
         justify-content: center;
+        align-items: center;
+        flex-direction: column;
       }
 
     </style>
@@ -76,22 +78,41 @@
 
             // RESULTS
             echo $homeTeam . " - " . $awayTeam . " | score = " . $homeScore . " - " . $awayScore . "<br>";
-
           }
 
          ?>
       </h1>
+    </header>
 
-
-
-
+    <main>
 
       <h2>
         <?php
-          // Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare "Accesso riuscito", altrimenti "Accesso negato"
-         ?>
+        // Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare "Accesso riuscito", altrimenti "Accesso negato"
+        echo $_GET["name"];
+        echo $_GET["email"];
+        echo $_GET["age"];
+
+        echo "<br>";
+
+        $name = $_GET["name"];
+        $email = $_GET["email"];
+        $age = $_GET["age"];
+
+        $findDot = ".";
+        $findAt = "@";
+        $searchDot = strpos($email, $findDot);
+        $searchAt = strpos($email, $findAt);
+
+        if( (strlen($name) > 3) && ( ($searchDot !== false) && ($searchAt !== false) ) && (is_numeric($age) == true ) ) {
+          echo "Accesso riuscito";
+        } else {
+          echo "Accesso negato";
+        }
+
+        ?>
       </h2>
-    </header>
+    </main>
 
   </body>
 
