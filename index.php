@@ -31,7 +31,7 @@
              "awayScore" => "65"
             ],
             [
-             "home" => "Toronto Raptors",
+             "home" => "Springfield Isotopi",
              "away" => "Boston Celtics",
              "homeScore" => "64",
              "awayScore" => "63"
@@ -57,17 +57,40 @@
 
         ]; // END OF $nbaSchedule
 
-          // var_dump(array_keys($nbaSchedule)); die();
-          // $test = $nbaSchedule['home'];
-          // echo $test;
-          for ($x = 0; $x < count($nbaSchedule); $x++) {
+        // Creiamo un array contenente le partite di basket di un'ipotetica tappa del calendario. Ogni array avrà una squadra di casa e una squadra ospite, punti fatti dalla squadra di casa e punti fatti dalla squadra ospite. Stampiamo a schermo tutte le partite con questo schema.Olimpia Milano - Cantù | 55-60
 
+          for ($x = 0; $x < count($nbaSchedule); $x++) {
             $individualGame = $nbaSchedule[$x];
-            var_dump($individualGame);
+
+            // HOME TEAM
+            $homeTeam = $individualGame["home"];
+
+            // AWAY TEAM
+            $awayTeam = $individualGame["away"];
+
+            // HOME SCORE
+            $homeScore = $individualGame["homeScore"];
+
+            // AWAY SCORE
+            $awayScore = $individualGame["awayScore"];
+
+            // RESULTS
+            echo $homeTeam . " - " . $awayTeam . " | score = " . $homeScore . " - " . $awayScore . "<br>";
+
           }
 
          ?>
       </h1>
+
+
+
+
+
+      <h2>
+        <?php
+          // Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare "Accesso riuscito", altrimenti "Accesso negato"
+         ?>
+      </h2>
     </header>
 
   </body>
